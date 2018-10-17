@@ -39,50 +39,61 @@
   <div class="reveal">
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
+
       <section>
         <h1>Nagios</h1>
 
         <h3>A trustworthy
           <br/>monitoring tool</h3>
       </section>
-      <section>
-        <section>
-          <h5>Because stories starting <br> with "Service is down" <br> have awful endings...</h5>
-        </section>
-        <section>
-          <h5>Service is down because...</h5>
 
-          <ul>
-            <li class="fragment">the server disk was full!</li>
-            <li class="fragment">the service stopped!</li>
-            <li class="fragment">memory is drained!</li>
-            <li class="fragment">we were hacked because of outdated packages running!</li>
-          </ul>
-        </section>
+      <section>
+        <h5>Because stories starting <br> with "Service is down" <br> have awful endings...</h5>
       </section>
+
+      <section>
+        <h5>Service is down because...</h5>
+
+        <ul>
+          <li class="fragment">the server disk was full</li>
+          <li class="fragment">memory is drained</li>
+          <li class="fragment">we were hacked because of outdated packages running</li>
+          <li class="fragment">docker service stopped</li>
+          <li class="fragment">docker container fails and restarts continuously</li>
+        </ul>
+      </section>
+
       <section>
         <h2>What is Nagios</h2>
         <p class="fragment">Nagios is a server monitoring infrastructure</p>
         <ul>
-          <li class="fragment">Configurable for multiple servers</li>
-          <li class="fragment">Independent from cluster</li>
+          <li class="fragment">Run independently from cluster</li>
+          <li class="fragment">Supports low footprint checks</li>
+          <li class="fragment">Supports checks running on nagios or remote machines</li>
+          <li class="fragment">Is configurable for multiple servers</li>
+          <li class="fragment">Can integrate multiple notification channels</li>
         </ul>
       </section>
+
       <section>
         <h2>How does this work?</h2>
-        <p>Each server runs nrpe, a nagios agent.<br>Nagios server sends checks to nrpe and handles the results.</p>
+        <p>Nagios server sends checks requests to servers and handles the results.</p>
+        <p>Each server runs nrpe, a nagios agent, to run the actual checks.</p>
         <img style="margin: 20px;border: none;box-shadow: none;" src="images/map.png">
       </section>
+
       <section>
         <h2>Nagios entities</h2>
-        <ul>
-          <li class="fragment">Host - <a target="_blank" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html#host">link</a></li>
-          <li class="fragment">Service - <a target="_blank" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html#service">link</a></li>
-          <li class="fragment">Contact - <a target="_blank" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html#contact">link</a></li>
-          <li class="fragment">Plugins - <a target="_blank" href="https://www.nagios.org/downloads/nagios-plugins/">link</a></li>
-          <li class="fragment">Addons like NRPE - execute Nagios plugins on remote Linux/Unix machines</li>
-        </ul>
+        <img style="margin: 20px;border: none;box-shadow: none;" src="images/nagios.png">
+        <div class="fragment">
+          <span style="padding-right: 20px"><a target="_blank" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html#host">Hosts</a></span>
+          <span style="padding-right: 20px"><a target="_blank" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html#service">Services</a></span>
+          <span style="padding-right: 20px"><a target="_blank" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/objectdefinitions.html#contact">Contacts</a></span>
+          <span style="padding-right: 20px"><a target="_blank" href="https://www.nagios.org/downloads/nagios-plugins/">Plugins</a></span>
+          <span style="padding-right: 20px"><a target="_blank" href="https://www.nagios.org/downloads/nagios-core-addons/">Addons</a></span>
+        </div>
       </section>
+
       <section>
         <h2>Let's take look</h2>
         <h3>in our dashboards</h3>
@@ -93,6 +104,15 @@
           <li><a target="_blank" href="http://nagios.monitor.centaur.ag/nagios/cgi-bin/status.cgi?servicegroup=all&style=grid">Services</a></li>
         </ul>
       </section>
+
+      <section>
+        <h2>End goal</h2>
+        <div class="fragment">
+          <h3>stay informed</h3>
+          <img style="margin: 20px;border: none;box-shadow: none;" src="images/pagerduty.png">
+        </div>
+      </section>
+
       <section>
         <h2>Thank you!</h2>
         <h3>Questions?</h3>
